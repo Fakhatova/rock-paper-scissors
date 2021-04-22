@@ -58,23 +58,46 @@ function humanWeapon(event) {
   var getWeapon = event.target.id
   if (getWeapon === 'rock') {
     game.humanWeapon = 'rock'
-    leftSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-011-512.png'/>`
+    leftSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
   }
   if (getWeapon === 'paper') {
     game.humanWeapon = 'paper'
-    leftSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-019-512.png'/>`
+    leftSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='Assets/paper-cartoon.webp' alt='paper cartoon'/>`
   }
   if (getWeapon === 'scissors') {
     game.humanWeapon = 'scissors'
-    leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='https://cdn0.iconfinder.com/data/icons/rock-paper-scissors-emoji/792/rock-paper-scissors-emoji-cartoon-009-512.png'/>`
+    leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.webp' alt='scissors cartoon'/>`
   }
   // if (getWeapon === 'spock') {
   //   game.humanWeapon = 'spock'
-  //   // gameBoard.innerHtml += `  <img class='spock-weapon' id='spock' src='https://w7.pngwing.com/pngs/365/477/png-transparent-spock-character-snoopy-homo-sapiens-t-shirt-mischief-boy-cartoon-fictional-character.png'/>`
+  //   // gameBoard.innerHtml += `  <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
   // }
   // if (getWeapon === 'lizard') {
   //   game.humanWeapon = 'lizard'
-  //   // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='🦎'/>`
+  //   // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
   // }
 
+}
+
+function coronaWeapon() {
+  game.randomGuess(game.weaponsClassic);
+  // console.log('robot picked: ', game.coronaWeapon);
+  if (game.coronaWeapon === 'rock') {
+    rightSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
+  }
+  if (game.coronaWeapon === 'paper') {
+
+    rightSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='Assets/paper-cartoon.webp' alt='paper cartoon'/>`
+  }
+  if (game.coronaWeapon === 'scissors') {
+
+    rightSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.webp' alt='scissors cartoon'/>`
+  }
+  // if (game.coronaWeapon === 'spock') {
+  //
+  //   // gameBoard.innerHtml += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+  // }
+  // if(game.coronaWeapon === 'lizard') {
+  // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
+  // }
 }
