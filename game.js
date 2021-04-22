@@ -15,5 +15,19 @@ class Game {
     this.coronaWeapon = weaponsClassic[index]
     return this.coronaWeapon
   }
+  findIfGameIsDraw() {
+    if (this.humanWeapon === this.coronaWeapon) {
+      return true
+    }
+  }
 
+  findGameWinner() {
+    if ((this.humanWeapon === 'rock' && this.coronaWeapon === 'scissors') ||
+      (this.humanWeapon === 'paper' && this.coronaWeapon === 'rock') ||
+      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'paper')) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
