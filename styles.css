@@ -51,3 +51,47 @@ body {
   height: 100px;
   margin-top: 30px;
 }
+
+/* GAME BOARD SECTION */
+.game-board {
+  width: 1000px;
+  height: 1000px;
+  border: 1px #e8e1df;
+}
+.container-1 {
+  flex-direction: column;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 150px 0 0 0;
+}
+.container-2 {
+  flex-direction: column;
+  height: 168px;
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+.game-title {
+  margin: 0;
+  font-size: xxx-large;
+}
+.game-choice {
+  margin: 30px 0 0 0;
+  font-size: x-large;
+  height: 100px;
+}
+.choose-game, .choose-game-addition {
+  flex-direction: column;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  font-size: larger;
+}
+.choose-game-addition {
+  height: 150px;
+}
+.choose-game:hover, .choose-game-addition:hover {
+  background-color: #ACA391;
+}
