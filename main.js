@@ -11,7 +11,7 @@ var changeGameBtn = document.getElementById('changeGame')
 
 
 // ******** GLOBAL VARIABLES ******** //
-// var game = new Game();
+var game = new Game();
 
 
 // ******** EVENTLISTENERS ******** //
@@ -39,6 +39,7 @@ function gameChoices(event) {
         <img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
     hideShow(classicGame, false)
     hideShow(additionGame, false)
+    game.gameType = 'Classic'
   } else if (event.target.id === 'chooseGameAddition') {
     gameOption.innerText = 'Choose Your weapons!'
     humanPlayer.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>
@@ -48,6 +49,7 @@ function gameChoices(event) {
     <img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt= 'lizard'>`
     hideShow(classicGame, false)
     hideShow(additionGame, false)
+    game.gameType = 'Advanced'
 
   }
 }
