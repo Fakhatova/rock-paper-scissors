@@ -41,3 +41,13 @@ body {
 .human-wins, .corona-wins {
   font-size: x-large;
 }
+
+/* ICONS */
+.rock-weapon,
+.paper-weapon,
+.scissor-weapon,
+.spock-weapon,
+.lizard-weapon {
+  height: 100px;
+  margin-top: 30px;
+}
