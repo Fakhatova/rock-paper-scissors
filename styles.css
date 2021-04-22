@@ -25,7 +25,7 @@ body {
   flex-direction: column;
 }
 .corona {
-  height: 200px;
+  /* height: 200px; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,6 +40,7 @@ body {
 }
 .human-wins, .corona-wins {
   font-size: x-large;
+  margin: 5px;
 }
 
 /* ICONS */
@@ -49,7 +50,7 @@ body {
 .spock-weapon,
 .lizard-weapon {
   height: 100px;
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 /* GAME BOARD SECTION */
