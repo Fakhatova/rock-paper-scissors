@@ -1,0 +1,9 @@
+/* BODY */
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  background: url(https://pressstart.vip/images/uploads/assets/foggy.png) no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Akaya Telivigala', cursive;
+}

@@ -9,49 +9,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <section class='human-play' id='humanPlay'>
-    <div class='wrapper-1' id='wrapper1'>
-    <img class='girl' id='id' src ='Assets/Girl-mask.png' alt='girl-with mask'/>
-    <h3 class='human' id='human'> Human </h3>
-    <p class='human-wins' id='humanWins'> Wins: </p>
+    <div class='container-1' id='container1'>
+      <img class='girl' id='id' src='Assets/Girl-mask.png' alt='girl-with mask' />
+      <h3 class='human-player' id='human'> Human </h3>
+      <p class='human-wins' id='humanWins'> Wins: </p>
     </div>
-      </section>
+  </section>
   <main class='game-board' id='gameBoard'>
-    <div class='wrapper-2' id='wrapper2'>
-    <h1 class='game-title' id='gameTitle'> Rock, Papper, Scissors </h1>
-        <h4 class='game-choice' id='gameChoice'> Choose your game </h4>
-        </div>
-        <div class='choose-game' id='chooseGame'>
-          <p id='chooseGame'> rock > scissors </br>
-              paper > rock </br>
-              scissors > paper
-          </p>
-        </div>
-        <div class='choose-game-addition' id='chooseGameAddition'>
-          <p id='chooseGameAddition'>
-            rock > scissors and lizard </br>
-              paper > rock and spock </br>
-              scissors > paper and lizard </br>
-              spock > scissors and rock </br>
-              lizard > paper and spock
-        </div>
-        <section class='display-weapon'>
-          <div class="human-weapon" id='left'></div>
-          <div class="robot-weapon" id='right'></div>
-        </section>
-      </main>
-<section class='corona-play' id='computerPlay'>
-  <div class='wrapper-3' id='wrapper3'>
-  <img class='corona' id='emoji' src='Assets/Coronavirus.png' alt='corona'/>
-  <h3 class='corona-player' id='computerplayer'> Corona </h3>
-  <p class='corona-wins' id='coronaWins'> Wins: </p>
-</div>
-</section>
+    <div class='container-2' id='container2'>
+      <h1 class='game-title' id='gameTitle'> Rock, Papper, Scissors </h1>
+      <h4 class='game-choice' id='gameChoice'> Choose your game </h4>
+    </div>
+    <div class='choose-game' id='chooseGame'>
+      <p id='chooseGame'> rock > scissors </br>
+        paper > rock </br>
+        scissors > paper
+      </p>
+    </div>
+    <div class='choose-game-addition' id='chooseGameAddition'>
+      <p id='chooseGameAddition'>
+        rock > scissors and lizard </br>
+        paper > rock and spock </br>
+        scissors > paper and lizard </br>
+        spock > scissors and rock </br>
+        lizard > paper and spock
+    </div>
+    <section class='display-weapon'>
+      <div class="human-weapon" id='left'></div>
+      <div class="robot-weapon" id='right'></div>
+    </section>
+  </main>
+  <section class='corona-play' id='computerPlay'>
+    <div class='container-1' id='container1'>
+      <img class='corona' id='emoji' src='Assets/Coronavirus.png' alt='corona' />
+      <h3 class='corona-player' id='computerplayer'> Corona </h3>
+      <p class='corona-wins' id='coronaWins'> Wins: </p>
+    </div>
+  </section>
 
-<script src="game.js"></script>
-<script src="player.js"></script>
-<script src="main.js"></script>
+  <script src="game.js"></script>
+  <script src="player.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
