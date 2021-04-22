@@ -95,3 +95,8 @@ body {
 .choose-game:hover, .choose-game-addition:hover {
   background-color: #ACA391;
 }
+
+/* HIDDEN CLASSES */
+.hidden {
+  display: none;
+}
