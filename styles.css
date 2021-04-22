@@ -7,3 +7,37 @@ body {
   background-size: cover;
   font-family: 'Akaya Telivigala', cursive;
 }
+/* HUMAN PLAYER and CORONA PLAYER */
+.human-play, .corona-play {
+  display: flex;
+  width: 1000px;
+  height: 1000px;
+  flex-direction: column;
+  align-items: center;
+}
+.human-player, .corona-player {
+  height: 50px;
+  margin: 40px 0 0 0;
+  font-size: xxx-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.corona {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+}
+.girl {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+}
+.human-wins, .corona-wins {
+  font-size: x-large;
+}
