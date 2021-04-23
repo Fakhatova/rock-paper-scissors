@@ -16,7 +16,7 @@ var game = new Game();
 
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
-// humanPlayer.addEventListener('click', declareWinner);
+humanPlayer.addEventListener('click', declareWinner);
 
 
 
@@ -66,7 +66,7 @@ function humanWeapon(event) {
   }
   if (getWeapon === 'scissors') {
     game.humanWeapon = 'scissors'
-    leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.webp' alt='scissors cartoon'/>`
+    leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
   // if (getWeapon === 'spock') {
   //   game.humanWeapon = 'spock'
@@ -81,7 +81,7 @@ function humanWeapon(event) {
 
 function coronaWeapon() {
   game.randomGuess(game.weaponsClassic);
-  // console.log('robot picked: ', game.coronaWeapon);
+
   if (game.coronaWeapon === 'rock') {
     rightSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
   }
@@ -100,4 +100,17 @@ function coronaWeapon() {
   // if(game.coronaWeapon === 'lizard') {
   // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
   // }
+}
+
+function declareWinner() {
+  humanWeapon(event)
+  coronaWeapon();
+  if (game.findGameWinner()) {
+    console.log('human won')
+  } else if (game.findIfGameIsDraw()) {
+    console.log('declarewinner', 'its drawww')
+  } else {
+    console.log('corona won')
+
+  }
 }
