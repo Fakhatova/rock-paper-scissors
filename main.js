@@ -4,22 +4,26 @@ var gameOption = document.getElementById('gameChoice');
 var classicGame = document.getElementById('chooseGame');
 var additionGame = document.getElementById('chooseGameAddition');
 var humanPlayer = document.getElementById('humanPlay');
+var humanRock = document.getElementById('human-rock');
+var humanPaper = document.getElementById('human-paper');
+var humanScissor = document.getElementById('human-scissors');
 var leftSideWeapon = document.getElementById('left');
 var rightSideWeapon = document.getElementById('right');
-var changeGameBtn = document.getElementById('changeGame')
-
+var changeGameBtn = document.getElementById('changeGame');
+var humanWinCount = document.getElementById('humanWins');
+var coronaWinCount = document.getElementById('coronaWins');
 
 
 // ******** GLOBAL VARIABLES ******** //
 var game = new Game();
-
+var winners = [];
 
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
 
 
-
+console.log(game.isGameOn);
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
 function hideShow(element, hidden) {
@@ -40,6 +44,7 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Classic'
+
   } else if (event.target.id === 'chooseGameAddition') {
     gameOption.innerText = 'Choose Your weapons!'
     humanPlayer.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>
@@ -50,21 +55,24 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Advanced'
-
   }
 }
 
 function humanWeapon(event) {
   var getWeapon = event.target.id
+  game.human.takeTurns()
   if (getWeapon === 'rock') {
+    coronaWeapon()
     game.humanWeapon = 'rock'
     leftSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
   }
   if (getWeapon === 'paper') {
+    coronaWeapon()
     game.humanWeapon = 'paper'
     leftSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='Assets/paper-cartoon.webp' alt='paper cartoon'/>`
   }
   if (getWeapon === 'scissors') {
+    coronaWeapon()
     game.humanWeapon = 'scissors'
     leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
@@ -81,17 +89,15 @@ function humanWeapon(event) {
 
 function coronaWeapon() {
   game.randomGuess(game.weaponsClassic);
-
+  game.corona.takeTurns()
   if (game.coronaWeapon === 'rock') {
     rightSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
   }
   if (game.coronaWeapon === 'paper') {
-
     rightSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='Assets/paper-cartoon.webp' alt='paper cartoon'/>`
   }
   if (game.coronaWeapon === 'scissors') {
-
-    rightSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.webp' alt='scissors cartoon'/>`
+    rightSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
   // if (game.coronaWeapon === 'spock') {
   //
@@ -104,13 +110,26 @@ function coronaWeapon() {
 
 function declareWinner() {
   humanWeapon(event)
-  coronaWeapon();
   if (game.findGameWinner()) {
-    console.log('human won')
+    var hWins = game.human.wins += 1
+    humanWinCount.innerText = hWins
+    gameOption.innerText = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
-    console.log('declarewinner', 'its drawww')
+    gameOption.innerText = "It's a Draaaawww"
   } else {
-    console.log('corona won')
-
+    var cWins = game.corona.wins += 1
+    coronaWinCount.innerText = cWins
+    gameOption.innerText = 'Corona Made One Human Sick 🦠'
   }
+  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
 }
+
+// function resetBoard(humanWeapons, coronaWeapons, winnerText) {
+//   if (!game.setTheGameOff()) {
+//     setTimeout(function() {
+//       humanWeapons.innerHTML = ''
+//       coronaWeapons.innerHTML = ''
+//       winnerText.innerHTML = ''
+//     }.bind(this), 3000);
+//   }
+// }
