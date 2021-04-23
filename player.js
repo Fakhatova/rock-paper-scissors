@@ -1,5 +1,5 @@
 class Player {
-  constructor(name, wins, token) {
+  constructor() {
     // this.id = Date.now();
     this.name = null;
     this.wins = 0;
