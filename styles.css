@@ -97,6 +97,11 @@ body {
   background-color: #ACA391;
 }
 
+.display-weapon{
+  display: flex;
+  justify-content: space-around;
+}
+
 /* HIDDEN CLASSES */
 .hidden {
   display: none;
