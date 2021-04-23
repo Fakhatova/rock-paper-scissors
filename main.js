@@ -4,11 +4,14 @@ var gameOption = document.getElementById('gameChoice');
 var classicGame = document.getElementById('chooseGame');
 var additionGame = document.getElementById('chooseGameAddition');
 var humanPlayer = document.getElementById('humanPlay');
+var humanRock = document.getElementById('human-rock');
+var humanPaper = document.getElementById('human-paper');
+var humanScissor = document.getElementById('human-scissors');
 var leftSideWeapon = document.getElementById('left');
 var rightSideWeapon = document.getElementById('right');
 var changeGameBtn = document.getElementById('changeGame');
-var humanWins = document.getElementById('humanWins');
-var coronaWins = document.getElementById('coronaWins');
+var humanWinCount = document.getElementById('humanWins');
+var coronaWinCount = document.getElementById('coronaWins');
 
 
 // ******** GLOBAL VARIABLES ******** //
@@ -20,7 +23,7 @@ gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
 
 
-
+console.log(game.isGameOn);
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
 function hideShow(element, hidden) {
@@ -57,17 +60,19 @@ function gameChoices(event) {
 
 function humanWeapon(event) {
   var getWeapon = event.target.id
-  // game.humanTurn = 'first'
   game.human.takeTurns()
   if (getWeapon === 'rock') {
+    coronaWeapon()
     game.humanWeapon = 'rock'
     leftSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
   }
   if (getWeapon === 'paper') {
+    coronaWeapon()
     game.humanWeapon = 'paper'
     leftSideWeapon.innerHTML += `<img class='paper-weapon' id='paper' src='Assets/paper-cartoon.webp' alt='paper cartoon'/>`
   }
   if (getWeapon === 'scissors') {
+    coronaWeapon()
     game.humanWeapon = 'scissors'
     leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
@@ -105,23 +110,26 @@ function coronaWeapon() {
 
 function declareWinner() {
   humanWeapon(event)
-  coronaWeapon();
   if (game.findGameWinner()) {
     var hWins = game.human.wins += 1
-    console.log('updated wins', hWins)
-    humanWins.innerText = hWins
-    console.log('human element', humanWins)
+    humanWinCount.innerText = hWins
     gameOption.innerText = 'Human saved 💉'
-    console.log('game class ', game)
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
     var cWins = game.corona.wins += 1
-    console.log('updated corona wins', cWins)
-    coronaWins.innerText = cWins
-    console.log('corona element', coronaWins)
+    coronaWinCount.innerText = cWins
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
-    console.log('game class ', game)
-
   }
+  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
 }
+
+// function resetBoard(humanWeapons, coronaWeapons, winnerText) {
+//   if (!game.setTheGameOff()) {
+//     setTimeout(function() {
+//       humanWeapons.innerHTML = ''
+//       coronaWeapons.innerHTML = ''
+//       winnerText.innerHTML = ''
+//     }.bind(this), 3000);
+//   }
+// }
