@@ -45,7 +45,7 @@ class Game {
         humanWeapons.innerHTML = ''
         coronaWeapons.innerHTML = ''
         winnerText.innerHTML = ''
-      }.bind(this), 3000);
+      }, 3000);
     }
   }
 }
