@@ -1,17 +1,19 @@
 class Game {
   constructor() {
-    this.playerHuman = new Player()
-    this.playerCorona = new Player()
+    this.human = new Player()
+    this.corona = new Player()
     this.gameType = null;
     this.weaponsClassic = ['rock', 'paper', 'scissors'];
     // this.weaponsAdvanced = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
     this.isGameOn = true;
     this.humanWeapon = null;
     this.coronaWeapon = null;
+    this.humanTurn = null;
+    this.coronaTurn = null;
 
   }
   randomGuess(weaponsClassic) {
-    console.log('hello')
+    // console.log('hello')
     var index = Math.floor(Math.random() * weaponsClassic.length)
     // var indexAdvanced = Math.floor(Math.random() * weaponsAdvanced.length)
 
