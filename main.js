@@ -12,6 +12,7 @@ var rightSideWeapon = document.getElementById('right');
 var changeGameBtn = document.getElementById('changeGame');
 var humanWinCount = document.getElementById('humanWins');
 var coronaWinCount = document.getElementById('coronaWins');
+var changeGameBtn = document.getElementById('changeGame')
 
 
 // ******** GLOBAL VARIABLES ******** //
@@ -20,7 +21,7 @@ var game = new Game();
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
-
+changeGameBtn.addEventListener('click', changeGameType);
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
@@ -127,8 +128,9 @@ function declareWinner() {
   game.human.saveWinsToStorage()
   game.corona.saveWinsToStorage()
   game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
-
+  hideShow(changeGameBtn, true)
 }
+
 
 
 

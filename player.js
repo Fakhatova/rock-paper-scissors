@@ -17,8 +17,10 @@ class Player {
   }
 
   retrieveWinsFromStorage() {
-
+    var scores = JSON.parse(localStorage.getItem(`${this.name}`)) || 0;
+    return scores;
   }
+
   takeTurns() {
     if (game.humanTurn === null) {
       game.humanTurn = 'first'
