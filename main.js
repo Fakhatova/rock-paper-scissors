@@ -16,14 +16,12 @@ var coronaWinCount = document.getElementById('coronaWins');
 
 // ******** GLOBAL VARIABLES ******** //
 var game = new Game();
-var winners = [];
 
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
 
 
-console.log(game.isGameOn);
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
 function hideShow(element, hidden) {
@@ -110,19 +108,24 @@ function coronaWeapon() {
 
 function declareWinner() {
   humanWeapon(event)
+  findWinner()
+  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
+}
+
+
+function findWinner() {
   if (game.findGameWinner()) {
-    var hWins = game.human.wins += 1
-    humanWinCount.innerText = hWins
-    gameOption.innerText = 'Human saved 💉'
+    humanWinCount.innerHTML = game.human.wins += 1
+    gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
-    var cWins = game.corona.wins += 1
-    coronaWinCount.innerText = cWins
+    coronaWinCount.innerText = game.corona.wins += 1
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
   }
-  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
 }
+
+
 
 // function resetBoard(humanWeapons, coronaWeapons, winnerText) {
 //   if (!game.setTheGameOff()) {
