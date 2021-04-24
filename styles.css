@@ -61,11 +61,13 @@ body {
    background-color: #7e8576;
    height: 27px;
    border-radius: 6px;
-   font-size: larger;
+   font-size: x-large;
    border-color: transparent;
+   font-family: 'Akaya Telivigala', cursive;
  }
  .change-game:hover {
   background-color: #9f9a89;
+
  }
 /* GAME BOARD SECTION */
 .game-board {
