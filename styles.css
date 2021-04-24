@@ -57,7 +57,16 @@ body {
   height: 100px;
   margin-top: 10px;
 }
-
+ .change-game {
+   background-color: #7e8576;
+   height: 27px;
+   border-radius: 6px;
+   font-size: larger;
+   border-color: transparent;
+ }
+ .change-game:hover {
+  background-color: #9f9a89;
+ }
 /* GAME BOARD SECTION */
 .game-board {
   height: 1000px;
@@ -98,6 +107,7 @@ body {
   display: flex;
   align-items: center;
   font-size: larger;
+  border-radius: 10px;
 }
 
 .choose-game-addition {
@@ -105,8 +115,8 @@ body {
   margin: 26px;
 }
 
-.choose-game:hover, .choose-game-addition:hover {
-  background-color: #ACA391;
+.choose-game:hover,.choose-game-addition:hover {
+  background-color: #a59e8c;
 }
 
 .display-weapon {

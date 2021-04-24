@@ -21,7 +21,7 @@ var game = new Game();
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
-changeGameBtn.addEventListener('click', changeGameType);
+// changeGameBtn.addEventListener('click', changeGameType);
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
