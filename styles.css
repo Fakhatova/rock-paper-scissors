@@ -1,20 +1,22 @@
 /* BODY */
 body {
   display: flex;
+  justify-content: space-evenly;
   margin: 0;
   height: 100vh;
   background: url(https://pressstart.vip/images/uploads/assets/foggy.png) no-repeat center center fixed;
   background-size: cover;
   font-family: 'Akaya Telivigala', cursive;
 }
+
 /* HUMAN PLAYER and CORONA PLAYER */
 .human-play, .corona-play {
   display: flex;
-  width: 1000px;
   height: 1000px;
   flex-direction: column;
   align-items: center;
 }
+
 .human-player, .corona-player {
   height: 50px;
   margin: 40px 0 0 0;
@@ -24,6 +26,7 @@ body {
   align-items: center;
   flex-direction: column;
 }
+
 .corona {
   /* height: 200px; */
   display: flex;
@@ -31,6 +34,7 @@ body {
   justify-content: center;
   width: 200px;
 }
+
 .girl {
   height: 100px;
   display: flex;
@@ -38,6 +42,7 @@ body {
   justify-content: center;
   width: 100px;
 }
+
 .human-wins, .corona-wins {
   font-size: x-large;
   margin: 5px;
@@ -55,10 +60,10 @@ body {
 
 /* GAME BOARD SECTION */
 .game-board {
-  width: 1000px;
   height: 1000px;
   border: 1px #e8e1df;
 }
+
 .container-1 {
   flex-direction: column;
   height: 300px;
@@ -67,6 +72,7 @@ body {
   align-items: center;
   margin: 150px 0 0 0;
 }
+
 .container-2 {
   flex-direction: column;
   height: 168px;
@@ -74,15 +80,18 @@ body {
   align-items: center;
   margin: 20px 0 0 0;
 }
+
 .game-title {
   margin: 0;
   font-size: xxx-large;
 }
+
 .game-choice {
   margin: 30px 0 0 0;
   font-size: x-large;
   height: 100px;
 }
+
 .choose-game, .choose-game-addition {
   flex-direction: column;
   height: 130px;
@@ -90,22 +99,26 @@ body {
   align-items: center;
   font-size: larger;
 }
+
 .choose-game-addition {
   height: 170px;
   margin: 26px;
 }
+
 .choose-game:hover, .choose-game-addition:hover {
   background-color: #ACA391;
 }
 
-.display-weapon{
+.display-weapon {
   display: flex;
   justify-content: space-around;
 }
+
 .classic, .difficult {
   margin: 0;
   font-size: x-large;
 }
+
 /* HIDDEN CLASSES */
 .hidden {
   display: none;

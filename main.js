@@ -12,18 +12,17 @@ var rightSideWeapon = document.getElementById('right');
 var changeGameBtn = document.getElementById('changeGame');
 var humanWinCount = document.getElementById('humanWins');
 var coronaWinCount = document.getElementById('coronaWins');
+var changeGameBtn = document.getElementById('changeGame')
 
 
 // ******** GLOBAL VARIABLES ******** //
 var game = new Game();
-var winners = [];
 
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
+changeGameBtn.addEventListener('click', changeGameType);
 
-
-console.log(game.isGameOn);
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
 function hideShow(element, hidden) {
@@ -44,6 +43,7 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Classic'
+    console.log(game.gameType)
 
   } else if (event.target.id === 'chooseGameAddition') {
     gameOption.innerText = 'Choose Your weapons!'
@@ -55,6 +55,7 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Advanced'
+    console.log(game.gameType)
   }
 }
 
@@ -108,21 +109,33 @@ function coronaWeapon() {
   // }
 }
 
-function declareWinner() {
-  humanWeapon(event)
+function findWinner() {
   if (game.findGameWinner()) {
-    var hWins = game.human.wins += 1
-    humanWinCount.innerText = hWins
-    gameOption.innerText = 'Human saved 💉'
+    humanWinCount.innerHTML = game.human.wins += 1
+    gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
-    var cWins = game.corona.wins += 1
-    coronaWinCount.innerText = cWins
+    coronaWinCount.innerText = game.corona.wins += 1
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
   }
-  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
+
 }
+
+function declareWinner() {
+  humanWeapon(event)
+  findWinner()
+  game.human.saveWinsToStorage()
+  game.corona.saveWinsToStorage()
+  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
+  hideShow(changeGameBtn, true)
+}
+
+
+
+
+
+
 
 // function resetBoard(humanWeapons, coronaWeapons, winnerText) {
 //   if (!game.setTheGameOff()) {
