@@ -49,12 +49,3 @@ class Game {
     }
   }
 }
-
-
-
-// how to reset the gameboard
-// create function to reset the game gameBoard
-// check if its the game on we want to do nothing,
-// if the gameOn is off we want to reset the game after 5 seconds
-// invoke the function in main js where game starts identifying winner
-// but only after when gameisOn is false
