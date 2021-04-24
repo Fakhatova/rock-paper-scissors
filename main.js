@@ -42,6 +42,7 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Classic'
+    console.log(game.gameType)
 
   } else if (event.target.id === 'chooseGameAddition') {
     gameOption.innerText = 'Choose Your weapons!'
@@ -53,6 +54,7 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Advanced'
+    console.log(game.gameType)
   }
 }
 
@@ -106,13 +108,6 @@ function coronaWeapon() {
   // }
 }
 
-function declareWinner() {
-  humanWeapon(event)
-  findWinner()
-  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
-}
-
-
 function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerHTML = game.human.wins += 1
@@ -123,7 +118,20 @@ function findWinner() {
     coronaWinCount.innerText = game.corona.wins += 1
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
   }
+
 }
+
+function declareWinner() {
+  humanWeapon(event)
+  findWinner()
+  game.human.saveWinsToStorage()
+  game.corona.saveWinsToStorage()
+  game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
+
+}
+
+
+
 
 
 

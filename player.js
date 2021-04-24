@@ -1,6 +1,5 @@
 class Player {
   constructor() {
-    // this.id = Date.now();
     this.name = null;
     this.wins = 0;
     this.token = null;
@@ -13,8 +12,8 @@ class Player {
 
     localStorage.setItem('humanWins', JSON.stringify(human))
     localStorage.setItem('coronaWins', JSON.stringify(corona))
-    console.log(JSON.stringify(human));
-    console.log(JSON.stringify(corona))
+    // console.log(JSON.stringify(human));
+    // console.log(JSON.stringify(corona))
   }
 
   retrieveWinsFromStorage() {
