@@ -8,7 +8,13 @@ class Player {
   }
 
   saveWinsToStorage() {
+    var human = game.human
+    var corona = game.corona
 
+    localStorage.setItem('humanWins', JSON.stringify(human))
+    localStorage.setItem('coronaWins', JSON.stringify(corona))
+    console.log(JSON.stringify(human));
+    console.log(JSON.stringify(corona))
   }
 
   retrieveWinsFromStorage() {
