@@ -25,6 +25,7 @@ var game = new Game();
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
 changeGameBtn.addEventListener('click', changeGameType);
+window.addEventListener('load', retrieveFromStorage)
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
@@ -81,7 +82,7 @@ function humanWeapon(event) {
   if (getWeapon === 'spock') {
     coronaWeapon()
     game.humanWeapon = 'spock'
-    leftSideWeapon.innerHtml += `  <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+    leftSideWeapon.innerHTML += `<img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
   }
   if (getWeapon === 'lizard') {
     coronaWeapon()
@@ -105,7 +106,7 @@ function coronaWeapon() {
   }
   if (game.coronaWeapon === 'spock') {
 
-    rightSideWeapon.innerHtml += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+    rightSideWeapon.innerHTML += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
   }
   if (game.coronaWeapon === 'lizard') {
     rightSideWeapon.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
@@ -115,16 +116,16 @@ function coronaWeapon() {
 function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerText = game.human.wins += 1
-    game.human.saveWinsToStorage()
+    // game.human.saveWinsToStorage()
     gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
     coronaWinCount.innerText = game.corona.wins += 1
-    game.corona.saveWinsToStorage()
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
   }
-
+  game.corona.saveWinsToStorage()
+  game.human.saveWinsToStorage()
 }
 
 function declareWinner() {
@@ -134,14 +135,9 @@ function declareWinner() {
   hideShow(changeGameBtn, true)
 }
 
-function retriveFromStorage() {
-  if (game.findGameWinner()) {
-    humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
-    console.log(humanWinCount)
-  } else {
-    coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
-    console.log(coronaWinCount)
-  }
+function retrieveFromStorage() {
+  humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
+  coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
 }
 
 function changeGameType() {
@@ -149,5 +145,5 @@ function changeGameType() {
   hideShow(additionGame, true);
   hideShow(changeGameBtn, false)
   humanPlayer.innerHTML = ''
-  retriveFromStorage();
+  retrieveFromStorage();
 }
