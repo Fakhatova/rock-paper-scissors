@@ -4,15 +4,18 @@ var gameOption = document.getElementById('gameChoice');
 var classicGame = document.getElementById('chooseGame');
 var additionGame = document.getElementById('chooseGameAddition');
 var humanPlayer = document.getElementById('humanPlay');
-var humanRock = document.getElementById('human-rock');
-var humanPaper = document.getElementById('human-paper');
-var humanScissor = document.getElementById('human-scissors');
+var humanRock = document.getElementById('rock');
+var humanPaper = document.getElementById('paper');
+var humanScissor = document.getElementById('scissors');
+var humanSpock = document.getElementById('spock');
+var humanLizard = document.getElementById('lizard')
 var leftSideWeapon = document.getElementById('left');
 var rightSideWeapon = document.getElementById('right');
 var changeGameBtn = document.getElementById('changeGame');
 var humanWinCount = document.getElementById('humanWins');
 var coronaWinCount = document.getElementById('coronaWins');
 var changeGameBtn = document.getElementById('changeGame')
+
 
 
 // ******** GLOBAL VARIABLES ******** //
@@ -22,14 +25,10 @@ var game = new Game();
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
 changeGameBtn.addEventListener('click', changeGameType);
-// window.addEventListener('load', retriveFromStorage)
-// console.log(humanWinCount)
-// console.log(coronaWinCount)
+window.addEventListener('load', retrieveFromStorage)
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
-
 function hideShow(element, hidden) {
-  console.log(element);
   if (hidden) {
     element.classList.remove('hidden');
   } else {
@@ -79,19 +78,21 @@ function humanWeapon(event) {
     game.humanWeapon = 'scissors'
     leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
-  // if (getWeapon === 'spock') {
-  //   game.humanWeapon = 'spock'
-  //   // gameBoard.innerHtml += `  <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
-  // }
-  // if (getWeapon === 'lizard') {
-  //   game.humanWeapon = 'lizard'
-  //   // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
-  // }
+  if (getWeapon === 'spock') {
+    coronaWeapon()
+    game.humanWeapon = 'spock'
+    leftSideWeapon.innerHTML += `<img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+  }
+  if (getWeapon === 'lizard') {
+    coronaWeapon()
+    game.humanWeapon = 'lizard'
+    leftSideWeapon.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
+  }
 
 }
 
 function coronaWeapon() {
-  game.randomGuess(game.weaponsClassic);
+  game.randomGuess(game.weaponsClassic, game.weaponsAdvanced);
   game.corona.takeTurns()
   if (game.coronaWeapon === 'rock') {
     rightSideWeapon.innerHTML += `<img class='rock-weapon' id='rock' src='Assets/rock-cartoon.webp' alt='rock cartoon'/>`
@@ -102,50 +103,39 @@ function coronaWeapon() {
   if (game.coronaWeapon === 'scissors') {
     rightSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
-  // if (game.coronaWeapon === 'spock') {
-  //
-  //   // gameBoard.innerHtml += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
-  // }
-  // if(game.coronaWeapon === 'lizard') {
-  // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
-  // }
+  if (game.coronaWeapon === 'spock') {
+
+    rightSideWeapon.innerHTML += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+  }
+  if (game.coronaWeapon === 'lizard') {
+    rightSideWeapon.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
+  }
 }
 
 function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerText = game.human.wins += 1
-    game.human.saveWinsToStorage()
-    console.log(humanWinCount)
     gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
     coronaWinCount.innerText = game.corona.wins += 1
-    game.corona.saveWinsToStorage()
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
-    console.log(coronaWinCount)
   }
-
+  game.corona.saveWinsToStorage()
+  game.human.saveWinsToStorage()
 }
 
 function declareWinner() {
   humanWeapon(event)
   findWinner()
-  // game.human.saveWinsToStorage()
-  // game.corona.saveWinsToStorage()
   game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
   hideShow(changeGameBtn, true)
 }
 
-function retriveFromStorage() {
-  if (game.findGameWinner()) {
-    // humanWinCount.innerText = game.human.wins
-    humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
-    console.log(humanWinCount)
-  } else {
-    coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
-    console.log(coronaWinCount)
-  }
+function retrieveFromStorage() {
+  humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
+  coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
 }
 
 function changeGameType() {
@@ -153,18 +143,5 @@ function changeGameType() {
   hideShow(additionGame, true);
   hideShow(changeGameBtn, false)
   humanPlayer.innerHTML = ''
-  retriveFromStorage();
+  retrieveFromStorage();
 }
-
-
-
-
-// function resetBoard(humanWeapons, coronaWeapons, winnerText) {
-//   if (!game.setTheGameOff()) {
-//     setTimeout(function() {
-//       humanWeapons.innerHTML = ''
-//       coronaWeapons.innerHTML = ''
-//       winnerText.innerHTML = ''
-//     }.bind(this), 3000);
-//   }
-// }
