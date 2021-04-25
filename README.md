@@ -28,34 +28,55 @@ In both games `User` player fights agains `Computer` player.
 
 #### Instructions:
 
-1. Choose Game Type:
+1. ##### Choose Game Type:
 
-![choose option](README- IMAGES"/recording-1.gif)
+![choose option](README-IMAGES/recording-1.gif)
 
-2. Choose Weapon:
+2. #####  Choose Weapon:
 
-![choose weapon](README- IMAGES"/recording-2.gif)
+![choose weapon](README-IMAGES/recording-2.gif)
 
-3. You Win/Lose:
+3. ##### You Win/Lose:
 
-![win loose](README- IMAGES"/recording-2.gif)
+![win loose](README-IMAGES/recording-2.gif)
 
-4. Switch to different game:
+4. ##### Switch to different game:
 
-![switch game](README- IMAGES"/recording-3.gif)
+![switch game](README-IMAGES/recording-3.gif)
 
-5. Play your weapon:
+5. ##### Play your weapon:
 
-![play weapon](README- IMAGES"/recording-4.gif)
+![play weapon](README-IMAGES/recording-4.gif)
 
-6. You Win/Lose:
+6. ##### You Win/Lose:
 
-![win loose](README- IMAGES"/recording-4.gif)
+![win loose](README-IMAGES/recording-4.gif)
 
-7. Switch to different game:
+7. ##### Switch to different game:
 
-![switch game ](README- IMAGES"/recording-5.gif)
+![switch game ](README-IMAGES/recording-5.gif)
 
-8. Refresh Page: Still your wins displayed:
+8. ##### Refresh Page: Still your wins displayed:
 
-![game on refresh](README- IMAGES"/recording-6.gif)
+![game on refresh](README-IMAGES/recording-6.gif)
+
+
+#### Why was this project created?
+To solidify and demonstrate the understanding of:
+1. Writing clean and DRY HTML, CSS, and JS
+2. Understand the difference between the data model and how the data is displayed on the DOM
+3. The class to class interactions
+4. Implementation of client-side data persistence by utilizing JSON and localStorage
+
+#### Languages
+
+1. HTML
+2. CSS
+3. JavasCript
+
+#### Reasources and Tools
+
+1. Dev-tools
+2. Google
+3. Stack-Overflow
+4. MDN Web Docs
