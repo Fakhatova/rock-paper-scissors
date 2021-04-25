@@ -1,7 +1,7 @@
 class Player {
   constructor() {
     this.name = null;
-    this.wins = 0;
+    this.wins = null;
     this.token = null;
 
   }
@@ -10,15 +10,30 @@ class Player {
     var human = game.human
     var corona = game.corona
 
-    localStorage.setItem('humanWins', JSON.stringify(human))
-    localStorage.setItem('coronaWins', JSON.stringify(corona))
-    // console.log(JSON.stringify(human));
-    // console.log(JSON.stringify(corona))
+    localStorage.setItem('human', JSON.stringify(human))
+    localStorage.setItem('corona', JSON.stringify(corona))
   }
 
-  retrieveWinsFromStorage() {
-    var scores = JSON.parse(localStorage.getItem(`${this.name}`)) || 0;
-    return scores;
+  // retrieveWinsFromStorage() {
+  //   console.log(localStorage.getItem('corona'));
+  //   console.log(localStorage.getItem('human'));
+  //   var scores = JSON.parse(localStorage.getItem(`${this.wins}`));
+  //   console.log(scores)
+  //   return scores;
+  // }
+
+  retrieveHumanWinsFromStorage() {
+    console.log('in human from storage');
+    var humanWins = localStorage.getItem('human');
+    humanWins = JSON.parse(humanWins)
+    return humanWins.wins;
+  }
+
+  retrieveCoronaWinsFromStorage() {
+    console.log('in corona from storage');
+    var coronaWins = localStorage.getItem('corona')
+    coronaWins = JSON.parse(coronaWins)
+    return coronaWins.wins;
   }
 
   takeTurns() {
