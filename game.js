@@ -39,7 +39,9 @@ class Game {
   findGameWinner() {
     if ((this.humanWeapon === 'rock' && this.coronaWeapon === 'scissors') ||
       (this.humanWeapon === 'paper' && this.coronaWeapon === 'rock') ||
+      (this.humanWeapon === 'paper' && this.coronaWeapon === 'spock') ||
       (this.humanWeapon === 'scissors' && this.coronaWeapon === 'paper') ||
+      (this.humanWeapon === 'rock' && this.coronaWeapon === 'lizard') ||
       (this.humanWeapon === 'scissors' && this.coronaWeapon === 'lizard') ||
       (this.humanWeapon === 'spock' && this.coronaWeapon === 'scissors') ||
       (this.humanWeapon === 'spock' && this.coronaWeapon === 'rock') ||
