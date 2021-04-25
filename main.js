@@ -79,14 +79,14 @@ function humanWeapon(event) {
     game.humanWeapon = 'scissors'
     leftSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
-  // if (getWeapon === 'spock') {
-  //   game.humanWeapon = 'spock'
-  //   // gameBoard.innerHtml += `  <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
-  // }
-  // if (getWeapon === 'lizard') {
-  //   game.humanWeapon = 'lizard'
-  //   // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
-  // }
+  if (getWeapon === 'spock') {
+    game.humanWeapon = 'spock'
+    leftSideWeapon.innerHtml += `  <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+  }
+  if (getWeapon === 'lizard') {
+    game.humanWeapon = 'lizard'
+    leftSideWeapon.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
+  }
 
 }
 
@@ -102,20 +102,19 @@ function coronaWeapon() {
   if (game.coronaWeapon === 'scissors') {
     rightSideWeapon.innerHTML += `<img class='scissor-weapon' id='scissors' src='Assets/scissors-cartoon.png' alt='scissors cartoon'/>`
   }
-  // if (game.coronaWeapon === 'spock') {
-  //
-  //   // gameBoard.innerHtml += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
-  // }
-  // if(game.coronaWeapon === 'lizard') {
-  // gameBoard.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
-  // }
+  if (game.coronaWeapon === 'spock') {
+
+    rightSideWeapon.innerHtml += ` <img class='spock-weapon' id='spock' src='Assets/spock-character.png' alt='spock character'/>`
+  }
+  if (game.coronaWeapon === 'lizard') {
+    rightSideWeapon.innerHTML += `<img class='lizard-weapon' id='lizard' src='Assets/lizard-icon.webp' alt='lizard'/>`
+  }
 }
 
 function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerText = game.human.wins += 1
     game.human.saveWinsToStorage()
-    console.log(humanWinCount)
     gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
@@ -123,7 +122,6 @@ function findWinner() {
     coronaWinCount.innerText = game.corona.wins += 1
     game.corona.saveWinsToStorage()
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
-    console.log(coronaWinCount)
   }
 
 }
@@ -131,8 +129,6 @@ function findWinner() {
 function declareWinner() {
   humanWeapon(event)
   findWinner()
-  // game.human.saveWinsToStorage()
-  // game.corona.saveWinsToStorage()
   game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
   hideShow(changeGameBtn, true)
 }
