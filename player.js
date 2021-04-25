@@ -14,14 +14,6 @@ class Player {
     localStorage.setItem('corona', JSON.stringify(corona))
   }
 
-  // retrieveWinsFromStorage() {
-  //   console.log(localStorage.getItem('corona'));
-  //   console.log(localStorage.getItem('human'));
-  //   var scores = JSON.parse(localStorage.getItem(`${this.wins}`));
-  //   console.log(scores)
-  //   return scores;
-  // }
-
   retrieveHumanWinsFromStorage() {
     console.log('in human from storage');
     var humanWins = localStorage.getItem('human');
