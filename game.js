@@ -33,7 +33,11 @@ class Game {
     if ((this.humanWeapon === 'rock' && this.coronaWeapon === 'scissors') ||
       (this.humanWeapon === 'paper' && this.coronaWeapon === 'rock') ||
       (this.humanWeapon === 'scissors' && this.coronaWeapon === 'paper') ||
-      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'lizard') || (this.humanWeapon === 'spock' && this.coronaWeapon === 'scissors')) {
+      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'lizard') ||
+      (this.humanWeapon === 'spock' && this.coronaWeapon === 'scissors') ||
+      (this.humanWeapon === 'spock' && this.coronaWeapon === 'rock') ||
+      (this.this.humanWeapon === 'lizard' && this.coronaWeapon === 'paper') ||
+      (this.humanWeapon === 'lizard' && this.coronaWeapon === 'spock')) {
       return true;
     } else {
       return false;
