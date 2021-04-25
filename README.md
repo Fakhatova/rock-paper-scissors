@@ -80,3 +80,5 @@ To solidify and demonstrate the understanding of:
 2. Google
 3. Stack-Overflow
 4. MDN Web Docs
+
+#### Reflection
