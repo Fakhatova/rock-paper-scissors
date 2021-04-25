@@ -23,10 +23,11 @@ class Game {
       this.coronaWeapon = weaponsClassic[index]
       console.log('its working 1')
       return this.coronaWeapon
-    } else if (this.gameType === 'Advanced') {
+    }
+    if (this.gameType === 'Advanced') {
       console.log('in advanced condition');
-      var indexAdvanced = Math.floor(Math.random() * weaponsAdvanced.length)
-      this.coronaWeapon = weaponsClassic[indexAdvanced]
+      var indexAdvanced = Math.floor(Math.random() * this.weaponsAdvanced.length)
+      this.coronaWeapon = this.weaponsAdvanced[indexAdvanced]
       console.log('in advanced')
       return this.coronaWeapon
 
@@ -45,7 +46,7 @@ class Game {
       (this.humanWeapon === 'scissors' && this.coronaWeapon === 'lizard') ||
       (this.humanWeapon === 'spock' && this.coronaWeapon === 'scissors') ||
       (this.humanWeapon === 'spock' && this.coronaWeapon === 'rock') ||
-      (this.this.humanWeapon === 'lizard' && this.coronaWeapon === 'paper') ||
+      (this.humanWeapon === 'lizard' && this.coronaWeapon === 'paper') ||
       (this.humanWeapon === 'lizard' && this.coronaWeapon === 'spock')) {
       return true;
     } else {
