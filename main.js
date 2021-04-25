@@ -21,11 +21,15 @@ var game = new Game();
 // ******** EVENTLISTENERS ******** //
 gameBoard.addEventListener('click', gameChoices);
 humanPlayer.addEventListener('click', declareWinner);
-// changeGameBtn.addEventListener('click', changeGameType);
+changeGameBtn.addEventListener('click', changeGameType);
+// window.addEventListener('load', retriveFromStorage)
+// console.log(humanWinCount)
+// console.log(coronaWinCount)
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
 
 function hideShow(element, hidden) {
+  console.log(element);
   if (hidden) {
     element.classList.remove('hidden');
   } else {
@@ -43,7 +47,6 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Classic'
-    console.log(game.gameType)
 
   } else if (event.target.id === 'chooseGameAddition') {
     gameOption.innerText = 'Choose Your weapons!'
@@ -55,7 +58,6 @@ function gameChoices(event) {
     hideShow(classicGame, false)
     hideShow(additionGame, false)
     game.gameType = 'Advanced'
-    console.log(game.gameType)
   }
 }
 
@@ -111,13 +113,17 @@ function coronaWeapon() {
 
 function findWinner() {
   if (game.findGameWinner()) {
-    humanWinCount.innerHTML = game.human.wins += 1
+    humanWinCount.innerText = game.human.wins += 1
+    game.human.saveWinsToStorage()
+    console.log(humanWinCount)
     gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
     coronaWinCount.innerText = game.corona.wins += 1
+    game.corona.saveWinsToStorage()
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
+    console.log(coronaWinCount)
   }
 
 }
@@ -125,14 +131,30 @@ function findWinner() {
 function declareWinner() {
   humanWeapon(event)
   findWinner()
-  game.human.saveWinsToStorage()
-  game.corona.saveWinsToStorage()
+  // game.human.saveWinsToStorage()
+  // game.corona.saveWinsToStorage()
   game.resetBoard(leftSideWeapon, rightSideWeapon, gameOption)
   hideShow(changeGameBtn, true)
 }
 
+function retriveFromStorage() {
+  if (game.findGameWinner()) {
+    // humanWinCount.innerText = game.human.wins
+    humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
+    console.log(humanWinCount)
+  } else {
+    coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
+    console.log(coronaWinCount)
+  }
+}
 
-
+function changeGameType() {
+  hideShow(classicGame, true);
+  hideShow(additionGame, true);
+  hideShow(changeGameBtn, false)
+  humanPlayer.innerHTML = ''
+  retriveFromStorage();
+}
 
 
 
