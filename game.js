@@ -4,7 +4,7 @@ class Game {
     this.corona = new Player()
     this.gameType = null;
     this.weaponsClassic = ['rock', 'paper', 'scissors'];
-    // this.weaponsAdvanced = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
+    this.weaponsAdvanced = ['rock', 'paper', 'scissors', 'spock', 'lizard'];
     this.isGameOn = true;
     this.humanWeapon = null;
     this.coronaWeapon = null;
@@ -15,13 +15,22 @@ class Game {
   setTheGameOff() {
     this.isGameOn = !this.isGameOn
   }
-  randomGuess(weaponsClassic) {
-    // console.log('hello')
-    var index = Math.floor(Math.random() * weaponsClassic.length)
-    // var indexAdvanced = Math.floor(Math.random() * weaponsAdvanced.length)
+  randomGuess(weaponsClassic, weaponsAdvanced) {
+    console.log('in function')
+    if (this.gameType === 'Classic') {
+      console.log('in classic if');
+      var index = Math.floor(Math.random() * weaponsClassic.length)
+      this.coronaWeapon = weaponsClassic[index]
+      console.log('its working 1')
+      return this.coronaWeapon
+    } else if (this.gameType === 'Advanced') {
+      console.log('in advanced condition');
+      var indexAdvanced = Math.floor(Math.random() * weaponsAdvanced.length)
+      this.coronaWeapon = weaponsClassic[indexAdvanced]
+      console.log('in advanced')
+      return this.coronaWeapon
 
-    this.coronaWeapon = weaponsClassic[index]
-    return this.coronaWeapon
+    }
   }
   findIfGameIsDraw() {
     if (this.humanWeapon === this.coronaWeapon) {
