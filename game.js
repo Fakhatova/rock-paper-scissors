@@ -32,7 +32,8 @@ class Game {
   findGameWinner() {
     if ((this.humanWeapon === 'rock' && this.coronaWeapon === 'scissors') ||
       (this.humanWeapon === 'paper' && this.coronaWeapon === 'rock') ||
-      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'paper')) {
+      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'paper') ||
+      (this.humanWeapon === 'scissors' && this.coronaWeapon === 'lizard') || (this.humanWeapon === 'spock' && this.coronaWeapon === 'scissors')) {
       return true;
     } else {
       return false;
@@ -45,7 +46,7 @@ class Game {
         humanWeapons.innerHTML = ''
         coronaWeapons.innerHTML = ''
         winnerText.innerHTML = ''
-      }, 3000);
+      }, 1500);
     }
   }
 }
