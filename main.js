@@ -28,7 +28,6 @@ changeGameBtn.addEventListener('click', changeGameType);
 window.addEventListener('load', retrieveFromStorage)
 
 // ******** EVENT HANDLERS AND FUNCTIONS ******** //
-
 function hideShow(element, hidden) {
   if (hidden) {
     element.classList.remove('hidden');
@@ -116,7 +115,6 @@ function coronaWeapon() {
 function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerText = game.human.wins += 1
-    // game.human.saveWinsToStorage()
     gameOption.innerHTML = 'Human saved 💉'
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"

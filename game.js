@@ -15,24 +15,21 @@ class Game {
   setTheGameOff() {
     this.isGameOn = !this.isGameOn
   }
+
   randomGuess(weaponsClassic, weaponsAdvanced) {
-    console.log('in function')
     if (this.gameType === 'Classic') {
-      console.log('in classic if');
       var index = Math.floor(Math.random() * weaponsClassic.length)
       this.coronaWeapon = weaponsClassic[index]
-      console.log('its working 1')
       return this.coronaWeapon
     }
     if (this.gameType === 'Advanced') {
-      console.log('in advanced condition');
       var indexAdvanced = Math.floor(Math.random() * this.weaponsAdvanced.length)
       this.coronaWeapon = this.weaponsAdvanced[indexAdvanced]
-      console.log('in advanced')
       return this.coronaWeapon
 
     }
   }
+
   findIfGameIsDraw() {
     if (this.humanWeapon === this.coronaWeapon) {
       return true
