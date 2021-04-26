@@ -82,3 +82,20 @@ To solidify and demonstrate the understanding of:
 4. MDN Web Docs
 
 #### Reflection
+
+Wins:
+
+My biggest win is completing project before due date and be able to understand every line of code.
+
+Challenges:
+
+Hardest part is to be able understand what is data type and localStorage, be able to write winning conditions and make game fully implement class to class interactions.
+
+#### Author
+* Farangiz Akhatova.
+
+
+#### Project Manager
+* Will Mitchel
+
+### Pages
