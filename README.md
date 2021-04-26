@@ -1,3 +1,6 @@
+
+# Rock Paper Scissors
+
 ### Overal
 
 Application Rock Paper Scissors is a game board where user plays agains computer.
@@ -6,7 +9,7 @@ Application has two types of the game: Classic and Advanced.
 
 In both games `User` player fights agains `Computer` player.
 
-#### Classic:
+### Classic:
 
 - The game of Rock, Paper, Scissors is played like this: at the same time, two players display one of three symbols:
 
@@ -16,7 +19,7 @@ In both games `User` player fights agains `Computer` player.
 
  If User player and Computer player chooses the same weapon, it is a Draw.
 
-#### Advanced:
+### Advanced:
 
 - The game of Rock, Paper, Scissors, Spock, Lizard is played like this: at the same time, two players display one of three symbols:
 
@@ -25,8 +28,8 @@ In both games `User` player fights agains `Computer` player.
 - Draw:
 
  If User player and Computer player chooses the same weapon, it is a Draw.
-
-#### Instructions:
+***
+### Instructions:
 
 1. ##### Choose Game Type:
 
@@ -59,29 +62,29 @@ In both games `User` player fights agains `Computer` player.
 8. ##### Refresh Page: Still your wins displayed:
 
 ![game on refresh](README-IMAGES/recording-6.gif)
+***
 
-
-#### Why was this project created?
+### Why was this project created?
 To solidify and demonstrate the understanding of:
 1. Writing clean and DRY HTML, CSS, and JS
 2. Understand the difference between the data model and how the data is displayed on the DOM
 3. The class to class interactions
 4. Implementation of client-side data persistence by utilizing JSON and localStorage
 
-#### Languages
+### Languages
 
 1. HTML
 2. CSS
 3. JavasCript
 
-#### Reasources and Tools
+### Reasources and Tools
 
 1. Dev-tools
 2. Google
 3. Stack-Overflow
 4. MDN Web Docs
 
-#### Reflection
+### Reflection
 
 Wins:
 
@@ -90,12 +93,13 @@ My biggest win is completing project before due date and be able to understand e
 Challenges:
 
 Hardest part is to be able understand what is data type and localStorage, be able to write winning conditions and make game fully implement class to class interactions.
+***
 
-#### Author
+### Author
 * Farangiz Akhatova.
 
 
-#### Project Manager
+### Project Manager
 * Will Mitchel
 
 ### Pages
