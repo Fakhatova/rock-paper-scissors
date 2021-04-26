@@ -15,51 +15,47 @@ In both games `User` player fights agains `Computer` player.
 
    a rock, paper, or scissors. A rock beats scissors, scissors beat paper by cutting it, and paper beats rock by covering it.
 
-- Draw:
-
- If User player and Computer player chooses the same weapon, it is a Draw.
+- Draw: If User player and Computer player chooses the same weapon, it is a Draw.
 
 ### Advanced:
 
 - The game of Rock, Paper, Scissors, Spock, Lizard is played like this: at the same time, two players display one of three symbols:
 
- Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors.
+  Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, lizard eats paper, paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors.
 
-- Draw:
-
- If User player and Computer player chooses the same weapon, it is a Draw.
+- Draw: If User player and Computer player chooses the same weapon, it is a Draw.
 ***
 ### Instructions:
 
-1. ##### Choose Game Type:
+1. #### Choose Game Type:
 
 ![choose option](README-IMAGES/recording-1.gif)
 
-2. #####  Choose Weapon:
+2. ####  Choose Weapon:
 
 ![choose weapon](README-IMAGES/recording-2.gif)
 
-3. ##### You Win/Lose:
+3. #### You Win/Lose:
 
 ![win loose](README-IMAGES/recording-2.gif)
 
-4. ##### Switch to different game:
+4. #### Switch to different game:
 
 ![switch game](README-IMAGES/recording-3.gif)
 
-5. ##### Play your weapon:
+5. #### Play your weapon:
 
 ![play weapon](README-IMAGES/recording-4.gif)
 
-6. ##### You Win/Lose:
+6. #### You Win/Lose:
 
 ![win loose](README-IMAGES/recording-4.gif)
 
-7. ##### Switch to different game:
+7. #### Switch to different game:
 
 ![switch game ](README-IMAGES/recording-5.gif)
 
-8. ##### Refresh Page: Still your wins displayed:
+8. #### Refresh Page: Still your wins displayed:
 
 ![game on refresh](README-IMAGES/recording-6.gif)
 ***
@@ -68,7 +64,7 @@ In both games `User` player fights agains `Computer` player.
 To solidify and demonstrate the understanding of:
 1. Writing clean and DRY HTML, CSS, and JS
 2. Understand the difference between the data model and how the data is displayed on the DOM
-3. The class to class interactions
+3. Class to class interactions
 4. Implementation of client-side data persistence by utilizing JSON and localStorage
 
 ### Languages
@@ -83,6 +79,7 @@ To solidify and demonstrate the understanding of:
 2. Google
 3. Stack-Overflow
 4. MDN Web Docs
+5. Trello Board
 
 ### Reflection
 
@@ -102,4 +99,6 @@ Hardest part is to be able understand what is data type and localStorage, be abl
 ### Project Manager
 * Will Mitchel
 
-### Pages
+### Deployed Page
+
+[Click here](https://fakhatova.github.io/rock-paper-scissors/)
