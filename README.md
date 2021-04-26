@@ -45,7 +45,7 @@ In both games `User` player fights agains `Computer` player.
 
 5. #### Play your weapon:
 
-![play weapon](README-IMAGES/recording-4.gif)
+![choose weapon](README-IMAGES/recording-4.gif)
 
 6. #### You Win/Lose:
 
@@ -71,9 +71,10 @@ To solidify and demonstrate the understanding of:
 
 1. HTML
 2. CSS
-3. JavasCript
+3. JavaScript
 
-### Reasources and Tools
+### Resources and Tools
+
 
 1. Dev-tools
 2. Google
@@ -91,6 +92,13 @@ Challenges:
 
 Hardest part is to be able understand what is data type and localStorage, be able to write winning conditions and make game fully implement class to class interactions.
 ***
+
+
+### Instructions for Running Project
+1. Clone this [repository.](https://github.com/Fakhatova/rock-paper-scissors)
+2. `cd` into the repository in your terminal.
+3. Then `open index.html` in your terminal to view it on your browser.
+
 
 ### Author
 * Farangiz Akhatova.
