@@ -14,7 +14,6 @@ var rightSideWeapon = document.getElementById('right');
 var changeGameBtn = document.getElementById('changeGame');
 var humanWinCount = document.getElementById('humanWins');
 var coronaWinCount = document.getElementById('coronaWins');
-var changeGameBtn = document.getElementById('changeGame')
 
 
 
@@ -116,14 +115,14 @@ function findWinner() {
   if (game.findGameWinner()) {
     humanWinCount.innerText = game.human.wins += 1
     gameOption.innerHTML = 'Human saved 💉'
+    game.human.saveHumanWinsToStorage()
   } else if (game.findIfGameIsDraw()) {
     gameOption.innerText = "It's a Draaaawww"
   } else {
     coronaWinCount.innerText = game.corona.wins += 1
     gameOption.innerText = 'Corona Made One Human Sick 🦠'
+    game.corona.saveCoronaWinsToStorage()
   }
-  game.corona.saveWinsToStorage()
-  game.human.saveWinsToStorage()
 }
 
 function declareWinner() {
@@ -135,7 +134,9 @@ function declareWinner() {
 
 function retrieveFromStorage() {
   humanWinCount.innerText = game.human.retrieveHumanWinsFromStorage()
+  game.human.wins = game.human.retrieveHumanWinsFromStorage()
   coronaWinCount.innerText = game.corona.retrieveCoronaWinsFromStorage()
+  game.corona.wins = game.corona.retrieveCoronaWinsFromStorage()
 }
 
 function changeGameType() {
